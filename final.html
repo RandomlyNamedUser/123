@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+      div {
+        font-family: Arial;
+        
+        margin: 0px;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-items: center;
+        background-color: rgb(255, 243, 230);
+      }
+      .header {
+        padding-top: 2px;
+        text-align: center;
+        padding-bottom: 2px;
+        margin-bottom: 6vh;
+        background-color: rgb(250, 219, 186);
+        font-size: 30px;        
+      }
+      .note {
+        text-align: center;
+        margin-bottom: 10vh;
+        font-size:35px
+      }
+      .bargain {
+        text-align: center;
+        margin-bottom: 8vh;
+        font-size:40px;
+      }
+      .spin-wheel {
+        width: 30vw;
+        height: 30vw;
+        transform: scale(1);
+        border-radius: 50%;
+        background-image: conic-gradient(
+          rgba(255, 223, 116, 0.911) 0deg, rgba(255, 223, 116, 0.911) 60deg,
+          rgb(245, 244, 182) 60deg, rgb(245, 244, 182) 120deg,
+          rgba(255, 223, 116, 0.911) 120deg, rgba(255, 223, 116, 0.911) 180deg,
+          rgb(245, 244, 182) 180deg, rgb(245, 244, 182) 240deg,
+          rgba(255, 223, 116, 0.911) 240deg, rgba(255, 223, 116, 0.911) 300deg,
+          rgb(245, 244, 182) 300deg, rgb(245, 244, 182) 360deg
+        );
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .spin-btn-position {
+        position: fixed;
+        bottom: 2vh;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 20px;
+      }
+      .spin-btn {
+        min-width: 50px;
+        min-height: 25px;
+
+      }
+      .spin-btn:hover {
+        box-shadow: 5px 5px 10px grey;
+        cursor: pointer;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #modal{
+        position:absolute;
+        bottom:-40vh;
+        transition:0.3s all ease-out;
+        display:none;
+        right:0vw;
+        width:100%;
+        
+        
+      }
+      .modal-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        background-color:ghostwhite;
+        
+      }
+      
+      button{
+        width:200px;
+        height:50px;
+        background-color:blanchedalmond;
+
+      }
+      #modal.active{
+        bottom:42%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="header">
+      <p><b>完成訂單</b></p>
+    </div>
+    
+    <div class="note">
+      <p>訂單火速製作中</p>
+    </div>
+    
+    <div class="bargain">
+      <p><b>折扣</b></p>
+    </div>
+    
+    <div class="spin-wheel">
+
+    </div>
+    
+    <div class="spin-btn-position" id="spin-btn-position">
+      <button class="spin-btn" onclick="spinWheel()">幸運抽獎</button>
+    </div>
+    
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>恭喜您，你獲得了$20代金劵!</h2><br>
+        <button onclick="closeModal()">關閉</button><br>
+      </div>
+    </div>
+    
+    <script>
+      function spinWheel() {
+        var po=document.getElementById("spin-btn-position")
+        po.style.display="none";
+        var wheel = document.querySelector('.spin-wheel');
+        wheel.style.animation = 'spin 3s ease-in-out forwards';
+        wheel.addEventListener('animationend', onAnimationEnd);
+        
+      }
+      function onAnimationEnd() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'block';
+        setTimeout(function(){modal.classList.toggle("active")})
+          
+      }
+
+      function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

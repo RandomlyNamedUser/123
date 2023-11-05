@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    
+ 
+    
+      
+      
+      .popup{display: none;
+    position: fixed;
+    bottom: 0vh;
+    left: 0vw;
+    width:100%;
+    z-index: 9998; 
+    height: 50vh;
+    background-color:antiquewhite;
+    border: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+    color:burlywood
+  }
+      .show{display: block;}
+
+
+    body{
+      margin:0px;
+      padding:0px;
+    }
+    
+    .fooder{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      height:7vh
+    }
+
+    .fooder_img{position:absolute;
+      left:0vw;
+      transform: translatey(-50%);
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+ 
+    .list_title{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
+      padding:5px;
+      text-align: center;
+      position:sticky;
+      font-weight:bold;
+      background-color:burlywood;
+    }
+
+    .list_item{
+      margin:10px 0;
+    }
+
+    .button{position: fixed;
+      bottom: 0vh;
+      right:0vw;
+      width: 100%;
+      background-color: #fff;
+      height:7vh}
+
+    .food{
+      width:100%;
+      border-radius:10px;
+      box-shadow:0 2px 4px rgba(0, 0, 0,0.2);
+      height:100px;
+      display:flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      background-color:white;
+    }
+        
+        .food-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    
+    .quantity-button {
+      display: inline-block;
+      width: 70px;
+      height: 50px;
+      background-color:lightslategray;
+      border: 1px solid #ccc;
+      text-align: center;
+      cursor: pointer;
+      
+    }
+
+    p{font-size: 20px;}
+    .quantity {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+      font-size:35px;
+    }
+
+    .quant{display:flex;
+      width:25%;
+      float:left;
+      justify-content: center; 
+  align-items: center;
+      
+    }
+
+    .img{display:flex;
+      width:75%;
+      float:left;  
+    }
+    
+    p{text-align: center;justify-content: center; 
+  align-items: center;
+    }
+    .menu-item input[type="number"] {
+      width: 50px;
+      margin-right: 10px;
+    }
+    
+    
+    
+  </style>
+
+
+</head>
+<body>
+  
+  <div class="nav">
+  
+  <div class="list_title">
+    <p style="font: 40px;">主食</p>
+  </div>
+
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-干炒叉燒意-mop42.jpg" alt="主食-干炒叉燒意">
+    <p>干炒叉燒意</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="food">
+    <div class="img">
+      <img src="img\主食-肉絲炒麵-mop36.jpg" alt="肉絲炒麵">
+      <p>肉絲炒麵</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="food">
+    <div class="img">
+      <img src="img\主食-沙爹牛肉通粉-mop28.jpg" alt="沙爹牛肉通粉" >
+      <p>沙爹牛肉通粉</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div> 
+
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-豆腐火腩飯-mop38.jpg" alt="豆腐火腩飯" >
+    <p>豆腐火腩飯</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+    
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-咖哩牛腩飯-mop38.jpg" alt="咖哩牛腩飯" >
+    <p>咖哩牛腩飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+      
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-咸魚雞粒炒飯-mop38.jpg" alt="咸魚雞粒炒飯" >
+    <p>咸魚雞粒炒飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+      
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-星州炒米-mop38.jpg" alt="星州炒米" >
+    <p>星州炒米</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+   
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-時菜牛肉飯-mop38.jpg" alt="時菜牛肉飯" >
+    <p>時菜牛肉飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+    
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-乾炒牛河-mop38.jpg" alt="乾炒牛河" >
+    <p>乾炒牛河</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+    
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-涼瓜排骨飯-mop45.jpg" alt="涼瓜排骨飯" >
+    <p>涼瓜排骨飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+    
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-豉椒鮮魷飯-mop38.jpg" alt="豉椒鮮魷飯" >
+    <p>豉椒鮮魷飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-雪菜肉絲湯米-mop28.jpg" alt="雪菜肉絲湯米" >
+    <p>雪菜肉絲湯米</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-麻婆豆腐飯-mop38.jpg" alt="麻婆豆腐飯" >
+    <p>麻婆豆腐飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-楊州炒飯-mop38.jpg" alt="楊州炒飯" >
+    <p>楊州炒飯</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="food">
+    <div class="img">
+      <img src="img\主食-滑蛋蝦仁飯-mop38.jpg" alt="滑蛋蝦仁飯" >
+      <p>滑蛋蝦仁飯</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\主食-豬扒炒公仔麵-mop30.jpg" alt="豬扒炒公仔麵" >
+    <p>豬扒炒公仔麵</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="list_title">
+    <p>輕食</p>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-五香肉丁公仔麵-mop25.jpg" alt="五香肉丁公仔麵">
+    <p>五香肉丁公仔麵</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-公司三文治-mop24.jpg" alt="公司三文治">
+    <p>公司三文治</p>
+    </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-火腿奄列-mop25.jpg" alt="火腿奄列">
+    <p>火腿奄列</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-火腿湯通粉-mop25.jpg" alt="火腿湯通粉">
+    <p>火腿湯通粉</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-牛油方包-mop25.jpg" alt="牛油方包">
+    <p>牛油方包</p>
+      </div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-占醬多士-mop20.jpg" alt="占醬多士">
+    <p>占醬多士</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-奶油多士-mop20.jpg" alt="奶油多士">
+    <p>奶油多士</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-吉列班塊-mop20.jpg" alt="吉列班塊">
+    <p>吉列班塊</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-吉列豬扒-mop20.jpg" alt="吉列豬扒">
+    <p>吉列豬扒</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-西多士-mop25.jpg" alt="西多士">
+    <p>西多士</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-咸牛肉三文治-mop24.jpg" alt="咸牛肉三文治">
+    <p>咸牛肉三文治</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-炸薯條-mop20.jpg" alt="炸薯條">
+    <p>炸薯條</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-菠蘿油-mop18.jpg" alt="菠蘿油">
+    <p>菠蘿油</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-瑞士雞翼-mop20.jpg" alt="瑞士雞翼">
+    <p>瑞士雞翼</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-餐蛋治-mop20.jpg" alt="餐蛋治">
+    <p>餐蛋治</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+  </div>
+  
+   <br>
+  
+  <div class="food">
+    <div class="img">
+    <img src="img\輕食-鮮油多士-mop20.jpg" alt="鮮油多士">
+    <p>鮮油多士</p>
+</div>
+    <div class="quant">
+      <div class="quantity-button"><p>-</p></div>
+      <div class="quantity">0</div>
+      <div class="quantity-button"><p style="text-align: center;">+</p></div>
+    </div>
+    </div>
+
+</div>
+
+
+<div id="popup" class="popup">
+  
+  <h2>订单总结</h2>
+ 
+  <button onclick="menuBtnClicked()">結算</button>
+  
+
+  <ul id="order-list"></ul>
+  <p id="total"></p>
+  </div>
+  
+<!------------------------------------------------------------------------------------------->
+  <div class="fooder" style="z-index: 9999;">
+    <div class="fooder_img">
+      <img src="img\shopping cart.png" alt="shopping cart" style="width: 30%;height: 30%;" id="image">
+    </div>
+    <br><br><br>
+    <div class="botton">
+    <button onclick="submitOrder(); displayValue()">提交订单</button>
+    </div>
+
+  </div>
+
+
+<!------------------------------------------------------------------------------------------------>
+  <script>
+ var image=document.getElementById("image");
+ var popup=document.getElementById("popup")
+ image.addEventListener("click",function(){popup.classList.toggle("show");});
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+    var quantityButtons = document.getElementsByClassName('quantity-button');
+
+  
+    for (var i = 0; i < quantityButtons.length; i++) {
+      quantityButtons[i].addEventListener('click', function() {
+        var quantityElement = this.parentNode.getElementsByClassName('quantity')[0];
+        var quantity = parseInt(quantityElement.innerText);
+
+        if (this.innerText === '+') {
+          quantity++;
+        } else if (this.innerText === '-' && quantity > 0) {
+          quantity--;
+        }
+
+        quantityElement.innerText = quantity;
+      });
+    }
+
+    function menuBtnClicked() {
+        window.location.href = "final.html"
+      }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+  </script>
+</body>
+</html>
