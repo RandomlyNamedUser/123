@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+      div {
+        font-family: Arial;
+        
+        margin: 0px;
+      }
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-items: center;
+        background-color:antiquewhite;
+      }
+      .header {
+        padding-top: 2px;
+        text-align: center;
+        padding-bottom: 2px;
+        margin-bottom: 6vh;
+        background-color: rgb(250, 219, 186);
+        font-size: 40px;
+        
+      }
+      .start-btn-position {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+        bottom:10%;
+        right:45%;
+        position: fixed;
+      }
+      button{
+        max-height: 120px;
+        max-width:  180px;
+        background-color: cornsilk;
+        font-size: 24px;
+        padding: 30px;
+      }
+      .start-btn {
+        cursor: pointer;
+      }
+      .start-btn:hover {
+        box-shadow: 5px 5px 5px grey;
+      }
+      .bottom {
+        height: 1fr;
+        width: 1fr;
+      }
+    </style>
+  </head>
+  <body> 
+    <div class="header">
+    <p>開心茶餐廳</p>
+    </div>
+    <div class="bottom">
+      <div class="start-btn-position">
+        <button class="start-btn" onclick="startBtnClicked()">開始點單</button>
+      </div>
+    </div>
+    <script>
+      function startBtnClicked() {
+        window.location.href = "menu.html"
+      }
+    </script>
+  </body>
+</html>
